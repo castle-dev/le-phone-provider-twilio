@@ -1,0 +1,21 @@
+language: node_js
+before_install:
+  - npm install -g gulp mocha
+  - npm install
+  - npm test
+install:
+  - 'git config --global user.email "travis-ci@entercastle.com"'
+  - 'git config --global user.name "Travis Castle"'
+script:
+  - gulp docs
+  - cd docs
+  - git init
+  - 'git remote add origin "https://${GH_TOKEN}@github.com/castle-dev/le-phone-provider-twilio.git"'
+  - git checkout -B gh-pages
+  - git add .
+  - 'git commit -m "Updating documentation"'
+  - 'git push origin gh-pages -fq > /dev/null'
+env:
+  global:
+    - ENVIRONMENT=staging
+    - secure: K/0eem/7nkM1Dj0ss3EcZIUge6Gc6N/2G76K4/KVJZnMY+g/66SCNStwykUtxlIgw7rLZPe4F+tEYE7O29X2ilNfYqtKxlJDMW0B97FK2nLDEH/5bSvDCTqSiAIH0g+Yq4uvgM6NyPXZCADLCMbHjSqBL7dUJIXI/paHv3bACQWqy7vcKjLXl0mh/uxGnqLhk8yb/hdbuHIUPxjzy+oAO5+GZtI5/NPlcX7yXt8RTn9A6gbXFLAjhl0xaDbD5wsjoCBid3QedImCfSqPRIi3aq0LugRxJVrpL9k4TDpLFl2QK4AuULSeQs7UkJvEOu/KUORYmYaSRFYDUox/6MhIEJwAEne4O86E7SekZwSGeugHS+kLjOcyWUsIHNJmkovcBXjUuosm5DHaRhhc6wFbZ2GFiUxFAmiYLA3ogBMk5zXQmFGwTuwCoMhKBBFB2iG2LMCoJYVok9upXDyYSsheB7Hr+az9CMPiT69Fd6w/JGFrgAV4P7SO9OEqHOXPcifNQssICen4gHi7rYKUfJYX4EeAV8PVqh055u2rxLKgO9L17wNwm9yhiakttrd6pgYvrvCpS3LRaclPqP1HoPt6tOOQ7k5QhxCfPhwF4ZmwafhYmbl6HSDC9h5B+TSo7nAXCWgFxLuH7k/IdCA4d9Uc280PVTEUsrBvnOzsQ4nzWn8=
