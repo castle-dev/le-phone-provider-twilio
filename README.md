@@ -10,7 +10,10 @@ le-phone-provider-twilio
 ## Usage
 
 ```
-  //TODO
+  var twilioAccountSID = /* your acount SID */
+  var twilioAuthToken = /* your auth token */
+  var PhoneProvider = require('le-phone-provider-twilio');
+  var provider = new PhoneProvider(twilioAuthToken, twilioAccountSID);
 ```
 
 ## Tests
