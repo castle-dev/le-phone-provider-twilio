@@ -5,7 +5,7 @@ var twilio = require('twilio');
  * @class PhoneProvider
  * @param {string} accountSID the twilio account SID
  * @param {string} authToken the twilio auth token
- * @returns {service}
+ * @returns {provider}
  */
 var PhoneProvider = function (accountSID, authToken) {
   if (!accountSID) { throw new Error('Account SID required'); }
