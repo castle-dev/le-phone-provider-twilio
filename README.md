@@ -13,7 +13,7 @@ le-phone-provider-twilio
   var twilioAccountSID = /* your acount SID */
   var twilioAuthToken = /* your auth token */
   var PhoneProvider = require('le-phone-provider-twilio');
-  var provider = new PhoneProvider(twilioAuthToken, twilioAccountSID);
+  var provider = new PhoneProvider(twilioAccountSID, twilioAuthToken);
 ```
 
 ## Tests
