@@ -1,6 +1,6 @@
 {
   "name": "le-phone-provider-twilio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Connect le-phone-service to Twilio",
   "main": "src/index.js",
   "scripts": {
