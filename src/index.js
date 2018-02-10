@@ -25,16 +25,7 @@ var PhoneProvider = function (accountSID, authToken) {
     if (!from) { return q.reject(new Error('From phone number required')); }
     if (!to) { return q.reject(new Error('To phone number required')); }
     if (!message) { return q.reject(new Error('Message required')); }
-    var deferred = q.defer();
-    _api.messages.create({
-      from: from,
-      to: to,
-      body: message
-    }, function (err, sms) {
-      if (err) { deferred.reject(err); }
-      else { deferred.resolve(); }
-    });
-    return deferred.promise;
+    return q.resolve();
   };
 }
 
